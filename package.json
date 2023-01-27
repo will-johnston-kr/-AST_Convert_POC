@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "start:dev": "npx nodemon"
   },
   "keywords": [],
@@ -20,6 +21,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "mock-fs": "^5.2.0",
     "react": "^18.2.0"
   }
 }
