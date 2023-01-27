@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/types": "^7.20.7",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
