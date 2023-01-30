@@ -1,13 +1,15 @@
-import ReactDOMServer from "react-dom/server";
 import * as React from "react";
-import babel, { BabelFileResult, NodePath, transformSync } from "@babel/core";
-import types, { JSXAttribute, jSXAttribute, JSXIdentifier } from "@babel/types";
+import ReactDOMServer from "react-dom/server";
+import { BabelFileResult, NodePath, transformSync } from "@babel/core";
 
-export const simpleConvert = (
-  fileContentsAsString: string
-): string | void | React.ReactElement => {
+/**
+ * Accepts a stringified file and, if deprecated string is found, returns updated string
+ *
+ * @param fileContentsAsString
+ * @returns { string | void }
+ */
+export const simpleConvert = (fileContentsAsString: string): string | void => {
   const visitor = {
-    //@ts-ignore
     JSXAttribute(path: NodePath<any>) {
       if (
         path.node.name.name === "className" &&
